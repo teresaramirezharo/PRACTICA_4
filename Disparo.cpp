@@ -20,10 +20,6 @@ void Disparo::dibuja()
 	glPopMatrix();
 
 	//estela
-	glBegin(GL_POLYGON);
-	glVertex2d(-5.0f,0.0f); 
-	glVertex2d(posicion.x, posicion.y); 
-	glEnd();
 }
 
 void Disparo::mueve(float t)
