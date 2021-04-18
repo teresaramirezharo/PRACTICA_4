@@ -9,6 +9,8 @@ Disparo::Disparo()
 	aceleracion.y = aceleracion.x = 0; //no afectado por gravedad
 	velocidad.x = 0; //solo velocidad vertical
 	velocidad.y = 2; //velocidad del disparo
+	posicion_inicial.x = -5.0f;
+	posicion_inicial.y = 0.0f;
 }
 
 void Disparo::dibuja()
@@ -20,6 +22,11 @@ void Disparo::dibuja()
 	glPopMatrix();
 
 	//estela
+	glColor3f(0.0f, 1.0f, 1.0f);
+	glBegin(GL_LINES);
+	glVertex2d(posicion_inicial.x, posicion_inicial.y);
+	glVertex2d(posicion.x, posicion.y);
+	glEnd();
 }
 
 void Disparo::mueve(float t)
